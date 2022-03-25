@@ -1,4 +1,4 @@
 import { render } from 'react-dom';
-import { App } from './components/App';
+import { App } from './routes/App';
 
 render(<App />, document.getElementById('root'));
