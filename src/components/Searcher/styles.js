@@ -40,6 +40,8 @@ export const SearcherContainer = styled.section`
       padding-left: 40px;
       color: #b9bdcf;
       font-weight: 400;
+      outline: none;
+      border: none;
 
       &::placeholder {
         color: #b9bdcf;

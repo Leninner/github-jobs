@@ -15,5 +15,9 @@ export default createGlobalStyle`
     max-width: 1201px;
     margin: 0 auto;
     width: 100%;
+
+    @media (max-width: 1175px) {
+      width: 95%;
+    }
   }
 `;
