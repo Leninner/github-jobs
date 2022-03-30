@@ -15,9 +15,22 @@ export default createGlobalStyle`
     max-width: 1201px;
     margin: 0 auto;
     width: 100%;
+    background: #F6F7FB;
 
     @media (max-width: 1175px) {
       width: 95%;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0.7rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #F6F7FB;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: gray;
     }
   }
 `;

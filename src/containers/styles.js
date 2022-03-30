@@ -13,3 +13,9 @@ export const MainTitle = styled.h1`
     font-weight: 400;
   }
 `;
+
+export const StyledJobsContainer = styled.div`
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+`;

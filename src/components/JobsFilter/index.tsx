@@ -1,9 +1,8 @@
 import { JobsFilterContainer, Lista, CheckCuadro } from './styles';
-import { useState } from 'react';
+import { VacanciesTypes } from '../VacanciesTypes';
 
-export const JobsFilter = () => {
-  const [currentFilter, setCurrentFilter] = useState('All');
-  const typeVacancies = ['All', 'Full Time', 'Part Time', 'Freelance'];
+export const JobsFilter = ({ currentFilter, setCurrentFilter }: any) => {
+  const typeVacancies = ['All', 'Full Time', 'Part Time', 'Sin especificar'];
 
   const handleFilter = (type: string) => {
     setCurrentFilter(type);
@@ -11,16 +10,13 @@ export const JobsFilter = () => {
 
   return (
     <JobsFilterContainer>
-      <div>
-        <Lista>
-          {typeVacancies.map((typeVacancy) => (
-            <label key={typeVacancy} onClick={() => handleFilter(typeVacancy)}>
-              <CheckCuadro className={`${currentFilter === typeVacancy && 'active'}`} />
-              <span>{typeVacancy}</span>
-            </label>
-          ))}
-        </Lista>
-      </div>
+      <VacanciesTypes
+        Lista={Lista}
+        vacanciesType={typeVacancies}
+        handleFilter={handleFilter}
+        CheckCuadro={CheckCuadro}
+        currentFilter={currentFilter}
+      />
     </JobsFilterContainer>
   );
 };

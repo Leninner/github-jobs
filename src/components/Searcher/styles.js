@@ -59,19 +59,19 @@ export const SearcherContainer = styled.section`
       bottom: 0;
       margin: auto;
       max-width: 146px;
-      width: 146px;
-      height: 47px;
       border: 0;
-      background: #1e86ff;
       cursor: pointer;
       transition: all 0.3s;
       margin: 4px;
-      font-family: 'Roboto';
       font-style: normal;
       font-weight: 500;
       font-size: 16px;
       line-height: 19px;
       color: #ffffff;
+      width: 146px;
+      height: 47px;
+      background: #1e86ff;
+      border-radius: 4px;
 
       @media (max-width: 768px) {
         width: 104px;

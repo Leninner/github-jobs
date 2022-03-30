@@ -8,7 +8,6 @@ export const Lista = styled.ul`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,500;0&display=swap');
   display: flex;
   flex-direction: column;
-  margin-top: 35px;
 
   label {
     display: flex;
