@@ -1,8 +1,7 @@
 import GlobalStyles from '../styles/globalStyles';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Layout } from '../containers/Layout';
-import { Header } from '../components/Header';
-import { JobsContainer } from '../containers/JobsContainer';
+import { HomeScreen } from '../pages/HomeScreen';
 
 export const App = () => {
   return (
@@ -10,8 +9,7 @@ export const App = () => {
       <GlobalStyles />
       <Layout>
         <Routes>
-          <Route path='/' element={<Header />} />
-          <Route path='/jobs' element={<JobsContainer />} />
+          <Route path='/' element={<HomeScreen />} />
         </Routes>
       </Layout>
     </BrowserRouter>
