@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const JobsListContainer = styled.div`
-  width: 790px;
+  width: 100%;
+  max-width: 790px;
 `;
 
 export const JobInitialDataContainer = styled.div`
@@ -30,8 +31,14 @@ export const JobInitialDataContainer = styled.div`
       width: 90px;
       height: 90px;
       border-radius: 4px;
-      background: blue;
       margin-right: 16px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        object-cover: contain;
+      }
     }
 
     .JobData {

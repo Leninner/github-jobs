@@ -17,7 +17,13 @@ export const JobsList = ({ jobs, loading }: JobsListProps) => {
       {jobs?.map((value: any) => (
         <JobInitialDataContainer key={value.id}>
           <section className='JobMainInfo'>
-            <div className='BoxImage' />
+            <div className='BoxImage'>
+              <img
+                src='https://img.freepik.com/vector-gratis/ilustracion-dibujos-animados-lindo-bulldog-funcionamiento-portatil-concepto-icono-tecnologia-animal_138676-1912.jpg?t=st=1648749241~exp=1648749841~hmac=77e6b8a2ab0179268a6740da3aadc9b704a9f7bcf4ae2bdc3f3ba7918270a863&w=740'
+                alt=''
+              />
+            </div>
+
             <div className='JobData'>
               <span>{value.company}</span>
               <h3>{value.title}</h3>
