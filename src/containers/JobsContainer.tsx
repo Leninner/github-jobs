@@ -1,22 +1,22 @@
-import { useGetJobsInfo } from '../Hooks/useGetJobsInfo';
-import { Response } from '../interfaces';
+// import { useGetJobsInfo } from '../Hooks/useGetJobsInfo';
 import { JobsFilter } from '../components/JobsFilter';
 import { JobsList } from '../components/JobsList';
 import { useState } from 'react';
 import { StyledJobsContainer } from './styles';
+import { useQuery } from 'react-query';
+import { getJobsData } from '../utils/getJobsData';
 
 export const JobsContainer = ({ currentLocation, setCurrentLocation, currentKeyword }: any) => {
   const [currentFilter, setCurrentFilter] = useState('All');
+  const { data, isLoading } = useQuery(
+    ['jobs', currentLocation, currentKeyword],
+    () => getJobsData({ location: currentLocation, keyword: currentKeyword }),
+    {
+      refetchOnWindowFocus: false,
+    }
+  );
 
-  const search = {
-    location: currentLocation,
-    keyword: currentKeyword,
-  };
-
-  const {
-    loading,
-    data: { jobs },
-  }: Response = useGetJobsInfo(search);
+  const jobs = data?.jobs;
 
   const filteredJobs = () => {
     switch (currentFilter) {
@@ -42,7 +42,7 @@ export const JobsContainer = ({ currentLocation, setCurrentLocation, currentKeyw
         currentLocation={currentLocation}
         currentKeyword={currentKeyword}
       />
-      <JobsList jobs={filteredJobs()} loading={loading} currentFilter={currentFilter} />
+      <JobsList jobs={filteredJobs()} loading={isLoading} currentFilter={currentFilter} />
     </StyledJobsContainer>
   );
 };

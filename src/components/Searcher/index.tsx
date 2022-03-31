@@ -27,7 +27,9 @@ export const Searcher = ({ setCurrentKeyword, currentLocation }: any) => {
           onChange={handleChange}
           value={search}
         />
-        <button type='submit'>Search</button>
+        <button type='submit' disabled={search.length > 0 ? false : true}>
+          Search
+        </button>
       </form>
     </SearcherContainer>
   );
