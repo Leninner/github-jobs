@@ -75,6 +75,12 @@ export const SearcherContainer = styled.section`
 
       @media (max-width: 768px) {
         width: 104px;
+        background: #1e86ff;
+      }
+
+      &:disabled {
+        background: #b9bdcf;
+        cursor: default;
       }
     }
   }
