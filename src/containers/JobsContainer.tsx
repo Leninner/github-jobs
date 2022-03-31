@@ -5,14 +5,18 @@ import { JobsList } from '../components/JobsList';
 import { useState } from 'react';
 import { StyledJobsContainer } from './styles';
 
-export const JobsContainer = () => {
+export const JobsContainer = ({ currentLocation, setCurrentLocation, currentKeyword }: any) => {
   const [currentFilter, setCurrentFilter] = useState('All');
-  const [currentLocation, setCurrentLocation] = useState('');
+
+  const search = {
+    location: currentLocation,
+    keyword: currentKeyword,
+  };
 
   const {
     loading,
     data: { jobs },
-  }: Response = useGetJobsInfo(currentLocation);
+  }: Response = useGetJobsInfo(search);
 
   const filteredJobs = () => {
     switch (currentFilter) {

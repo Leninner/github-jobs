@@ -1,12 +1,12 @@
-export const getJobsData = (url, key, setJobs, location) => {
+export const getJobsData = (url, key, setJobs, { location, keyword }) => {
   fetch(url + key, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      location: location.length > 0 ? location : 'spain',
-      keywords: 'developer',
+      location: location,
+      keywords: keyword,
       page: 1,
     }),
   })

@@ -27,3 +27,8 @@ export enum Type {
   Temporal = 'Temporal',
   TemporalCompleta = 'Temporal, Completa',
 }
+
+export interface Search {
+  location: string;
+  keyword: string;
+}

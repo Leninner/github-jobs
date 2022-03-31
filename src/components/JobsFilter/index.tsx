@@ -6,13 +6,8 @@ export const JobsFilter = ({ currentFilter, setCurrentFilter, setCurrentLocation
   const typeVacancies = ['All', 'Full Time', 'Part Time', 'Sin especificar'];
   const customLocations = ['London', 'Amsterdam', 'Madrid', 'Paris', 'Roma'];
 
-  const handleVacancies = (type: string) => {
-    setCurrentFilter(type);
-  };
-
-  const handleLocation = (location: string) => {
-    setCurrentLocation(location);
-  };
+  const handleVacancies = (type: string) => setCurrentFilter(type);
+  const handleLocation = (location: string) => setCurrentLocation(location);
 
   return (
     <JobsFilterContainer>
