@@ -36,6 +36,10 @@ export const CheckCuadro = styled.div`
   margin-right: 12px;
 
   &.active {
-    background-color: #334680;
+    &.active {
+      background-color: #1e86ff;
+      border: 1px solid #1e86ff;
+      box-shadow: inset 0 0 0 2px #fff;
+    }
   }
 `;

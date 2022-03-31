@@ -1,9 +1,9 @@
-export const VacanciesTypes = ({ Lista, vacanciesType, handleFilter, CheckCuadro, currentFilter }: any) => {
+export const VacanciesTypes = ({ Lista, vacanciesType, handleVacancies, CheckCuadro, currentFilter }: any) => {
   return (
     <div>
       <Lista>
         {vacanciesType.map((typeVacancy: string) => (
-          <label key={typeVacancy} onClick={() => handleFilter(typeVacancy)}>
+          <label key={typeVacancy} onClick={() => handleVacancies(typeVacancy)}>
             <CheckCuadro className={`${currentFilter === typeVacancy && 'active'}`} />
             <span>{typeVacancy}</span>
           </label>

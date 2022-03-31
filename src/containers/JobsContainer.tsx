@@ -7,11 +7,12 @@ import { StyledJobsContainer } from './styles';
 
 export const JobsContainer = () => {
   const [currentFilter, setCurrentFilter] = useState('All');
+  const [currentLocation, setCurrentLocation] = useState('');
 
   const {
     loading,
     data: { jobs },
-  }: Response = useGetJobsInfo();
+  }: Response = useGetJobsInfo(currentLocation);
 
   const filteredJobs = () => {
     switch (currentFilter) {
@@ -23,6 +24,8 @@ export const JobsContainer = () => {
         return jobs.filter((job: any) => job.type.includes('Temporal'));
       case 'Sin especificar':
         return jobs.filter((job: any) => !job.type.length);
+      case 'London':
+        return jobs.filter((job: any) => job.location.includes('London'));
       default:
         break;
     }
@@ -30,7 +33,12 @@ export const JobsContainer = () => {
 
   return (
     <StyledJobsContainer>
-      <JobsFilter currentFilter={currentFilter} setCurrentFilter={setCurrentFilter} />
+      <JobsFilter
+        currentFilter={currentFilter}
+        setCurrentFilter={setCurrentFilter}
+        setCurrentLocation={setCurrentLocation}
+        currentLocation={currentLocation}
+      />
       <JobsList jobs={filteredJobs()} loading={loading} currentFilter={currentFilter} />
     </StyledJobsContainer>
   );

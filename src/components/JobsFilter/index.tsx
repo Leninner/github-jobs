@@ -1,11 +1,17 @@
 import { JobsFilterContainer, Lista, CheckCuadro } from './styles';
 import { VacanciesTypes } from '../VacanciesTypes';
+import { LocationsFilter } from '../LocationsFilter';
 
-export const JobsFilter = ({ currentFilter, setCurrentFilter }: any) => {
+export const JobsFilter = ({ currentFilter, setCurrentFilter, setCurrentLocation, currentLocation }: any) => {
   const typeVacancies = ['All', 'Full Time', 'Part Time', 'Sin especificar'];
+  const customLocations = ['London', 'Amsterdam', 'Berlin', 'Madrid', 'Paris', 'Roma', 'Tokio'];
 
-  const handleFilter = (type: string) => {
+  const handleVacancies = (type: string) => {
     setCurrentFilter(type);
+  };
+
+  const handleLocation = (location: string) => {
+    setCurrentLocation(location);
   };
 
   return (
@@ -13,9 +19,14 @@ export const JobsFilter = ({ currentFilter, setCurrentFilter }: any) => {
       <VacanciesTypes
         Lista={Lista}
         vacanciesType={typeVacancies}
-        handleFilter={handleFilter}
+        handleVacancies={handleVacancies}
         CheckCuadro={CheckCuadro}
         currentFilter={currentFilter}
+      />
+      <LocationsFilter
+        customLocations={customLocations}
+        handleLocation={handleLocation}
+        currentLocation={currentLocation}
       />
     </JobsFilterContainer>
   );
