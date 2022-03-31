@@ -12,6 +12,7 @@ export const LocationsFilter = ({ customLocations, currentLocation, handleLocati
     e.preventDefault();
     handleLocation(search);
     setSearch('');
+    sessionStorage.setItem('currentLocation', search);
     navigate(`/location=${search}/q=${currentKeyword}`);
   };
 
