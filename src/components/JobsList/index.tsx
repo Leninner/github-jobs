@@ -1,4 +1,5 @@
 import { JobsListContainer, JobInitialDataContainer } from './styles';
+import { SkeletonLoader } from '../SkeletonLoader';
 
 interface JobsListProps {
   loading: boolean;
@@ -10,7 +11,8 @@ export const JobsList = ({ jobs, loading }: JobsListProps) => {
   console.log(jobs);
   return (
     <JobsListContainer>
-      {loading && <p>Cargando...</p>}
+      {loading && <SkeletonLoader />}
+
       {jobs?.map((value: any) => (
         <JobInitialDataContainer key={value.id}>{value.title}</JobInitialDataContainer>
       ))}
