@@ -1,9 +1,9 @@
 import { Searcher } from '../Searcher';
 
-export const Header = ({ setCurrentKeyword }: any) => {
+export const Header = ({ setCurrentKeyword, currentLocation }: any) => {
   return (
     <div>
-      <Searcher setCurrentKeyword={setCurrentKeyword} />
+      <Searcher setCurrentKeyword={setCurrentKeyword} currentLocation={currentLocation} />
     </div>
   );
 };

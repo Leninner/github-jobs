@@ -15,6 +15,24 @@ export const LocationFilterContainer = styled.div`
     margin-bottom: 14px;
   }
 
+  form {
+    width: 100%;
+    height: 48px;
+    position: relative;
+
+    .material-icons-outlined.md-18 {
+      position: absolute;
+      top: 0;
+      left: 14px;
+      bottom: 0;
+      margin: auto;
+      width: 15px;
+      height: 15px;
+      font-size: 15px;
+      color: #b9bdcf;
+    }
+  }
+
   ul {
     margin-top: 26px;
   }
@@ -22,7 +40,7 @@ export const LocationFilterContainer = styled.div`
 
 export const LocationInput = styled.input`
   width: 100%;
-  height: 48px;
+  height: 100%;
   background: #ffffff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   border-radius: 4px;

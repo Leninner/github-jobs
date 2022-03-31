@@ -1,8 +1,10 @@
 import { LocationFilterContainer, LocationInput, Label } from './CommonStyles';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export const LocationsFilter = ({ customLocations, currentLocation, handleLocation }: any) => {
+export const LocationsFilter = ({ customLocations, currentLocation, handleLocation, currentKeyword }: any) => {
   const [search, setSearch] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e: any) => setSearch(e.target.value);
 
@@ -10,6 +12,7 @@ export const LocationsFilter = ({ customLocations, currentLocation, handleLocati
     e.preventDefault();
     handleLocation(search);
     setSearch('');
+    navigate(`/location=${search}/q=${currentKeyword}`);
   };
 
   return (
@@ -22,6 +25,7 @@ export const LocationsFilter = ({ customLocations, currentLocation, handleLocati
           onChange={handleChange}
           value={search}
         />
+        <span className='material-icons-outlined md-18'>public</span>
       </form>
 
       <ul>

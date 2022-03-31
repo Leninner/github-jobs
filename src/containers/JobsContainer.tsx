@@ -40,6 +40,7 @@ export const JobsContainer = ({ currentLocation, setCurrentLocation, currentKeyw
         setCurrentFilter={setCurrentFilter}
         setCurrentLocation={setCurrentLocation}
         currentLocation={currentLocation}
+        currentKeyword={currentKeyword}
       />
       <JobsList jobs={filteredJobs()} loading={loading} currentFilter={currentFilter} />
     </StyledJobsContainer>

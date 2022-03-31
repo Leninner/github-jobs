@@ -1,9 +1,11 @@
 import imageBackGround from '../../assets/backgroundImg.png';
 import { SearcherContainer } from './styles';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export const Searcher = ({ setCurrentKeyword }: any) => {
+export const Searcher = ({ setCurrentKeyword, currentLocation }: any) => {
   const [search, setSearch] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e: any) => setSearch(e.target.value);
 
@@ -11,6 +13,7 @@ export const Searcher = ({ setCurrentKeyword }: any) => {
     e.preventDefault();
     setCurrentKeyword(search);
     setSearch('');
+    navigate(`/location=${currentLocation}/q=${search}`);
   };
 
   return (
