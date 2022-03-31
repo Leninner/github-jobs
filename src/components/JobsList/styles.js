@@ -16,6 +16,10 @@ export const JobInitialDataContainer = styled.div`
   justify-content: space-between;
   padding: 12px;
 
+  .JobMainInfo {
+    max-width: 70%;
+  }
+
   section {
     display: flex;
     height: 100%;
@@ -47,6 +51,10 @@ export const JobInitialDataContainer = styled.div`
         font-size: 18px;
         line-height: 21px;
         color: #334680;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       div {

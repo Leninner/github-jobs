@@ -16,7 +16,7 @@ export const JobsList = ({ jobs, loading }: JobsListProps) => {
 
       {jobs?.map((value: any) => (
         <JobInitialDataContainer key={value.id}>
-          <section>
+          <section className='JobMainInfo'>
             <div className='BoxImage' />
             <div className='JobData'>
               <span>{value.company}</span>
