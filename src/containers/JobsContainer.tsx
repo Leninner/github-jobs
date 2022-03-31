@@ -8,8 +8,12 @@ import { getJobsData } from '../utils/getJobsData';
 
 export const JobsContainer = ({ currentLocation, setCurrentLocation, currentKeyword }: any) => {
   const [currentFilter, setCurrentFilter] = useState('All');
-  const { data, isLoading } = useQuery(['jobs', currentLocation, currentKeyword], () =>
-    getJobsData({ location: currentLocation, keyword: currentKeyword })
+  const { data, isLoading } = useQuery(
+    ['jobs', currentLocation, currentKeyword],
+    () => getJobsData({ location: currentLocation, keyword: currentKeyword }),
+    {
+      refetchOnWindowFocus: false,
+    }
   );
 
   const jobs = data?.jobs;
