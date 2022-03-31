@@ -24,8 +24,6 @@ export const JobsContainer = () => {
         return jobs.filter((job: any) => job.type.includes('Temporal'));
       case 'Sin especificar':
         return jobs.filter((job: any) => !job.type.length);
-      case 'London':
-        return jobs.filter((job: any) => job.location.includes('London'));
       default:
         break;
     }

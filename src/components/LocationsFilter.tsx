@@ -1,13 +1,27 @@
 import { LocationFilterContainer, LocationInput, Label } from './CommonStyles';
+import { useState } from 'react';
 
 export const LocationsFilter = ({ customLocations, currentLocation, handleLocation }: any) => {
-  console.log(currentLocation);
+  const [search, setSearch] = useState('');
+
+  const handleChange = (e: any) => setSearch(e.target.value);
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    handleLocation(search);
+    setSearch('');
+  };
 
   return (
     <LocationFilterContainer>
       <h2>LOCATION</h2>
-      <form>
-        <LocationInput type='text' placeholder='City, state, zip code or country' />
+      <form onSubmit={handleSubmit}>
+        <LocationInput
+          type='text'
+          placeholder='City, state, zip code or country'
+          onChange={handleChange}
+          value={search}
+        />
       </form>
 
       <ul>
