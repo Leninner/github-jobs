@@ -1,10 +1,8 @@
 import { LocationFilterContainer, LocationInput, Label } from './CommonStyles';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-export const LocationsFilter = ({ customLocations, currentLocation, handleLocation, currentKeyword }: any) => {
+export const LocationsFilter = ({ customLocations, currentLocation, handleLocation }: any) => {
   const [search, setSearch] = useState('');
-  const navigate = useNavigate();
 
   const handleChange = (e: any) => setSearch(e.target.value);
 
@@ -12,8 +10,7 @@ export const LocationsFilter = ({ customLocations, currentLocation, handleLocati
     e.preventDefault();
     handleLocation(search);
     setSearch('');
-    sessionStorage.setItem('currentLocation', search);
-    navigate(`/location=${search}/q=${currentKeyword}`);
+    localStorage.setItem('currentLocation', search);
   };
 
   return (

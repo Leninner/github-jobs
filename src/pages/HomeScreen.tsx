@@ -4,15 +4,15 @@ import { useState } from 'react';
 
 export const HomeScreen = () => {
   const [currentLocation, setCurrentLocation] = useState(() => {
-    if (sessionStorage.getItem('currentLocation')) {
-      return sessionStorage.getItem('currentLocation');
+    if (localStorage.getItem('currentLocation')) {
+      return localStorage.getItem('currentLocation');
     }
 
     return 'spain';
   });
   const [currentKeyword, setCurrentKeyword] = useState(() => {
-    if (sessionStorage.getItem('currentKeyword')) {
-      return sessionStorage.getItem('currentKeyword');
+    if (localStorage.getItem('currentKeyword')) {
+      return localStorage.getItem('currentKeyword');
     }
 
     return 'developer';

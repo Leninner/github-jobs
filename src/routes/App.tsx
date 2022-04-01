@@ -10,8 +10,8 @@ export const App = () => {
       <Layout>
         <Routes>
           <Route path='/' element={<HomeScreen />} />
-          {/* TODO: Implementar paginación */}
           <Route path={`/:location/:keyword`} element={<HomeScreen />} />
+          <Route path='*' element={<HomeScreen />} />
         </Routes>
       </Layout>
     </BrowserRouter>
