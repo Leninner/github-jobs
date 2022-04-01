@@ -1,7 +1,6 @@
 import { JobsFilterContainer, Lista, CheckCuadro } from './styles';
 import { VacanciesTypes } from '../VacanciesTypes';
 import { LocationsFilter } from '../LocationsFilter';
-import { useNavigate } from 'react-router-dom';
 
 export const JobsFilter = ({
   currentFilter,
@@ -12,13 +11,11 @@ export const JobsFilter = ({
 }: any) => {
   const typeVacancies = ['All', 'Full Time', 'Part Time', 'Sin especificar'];
   const customLocations = ['London', 'Amsterdam', 'Madrid', 'Paris', 'Roma'];
-  const navigate = useNavigate();
 
   const handleVacancies = (type: string) => setCurrentFilter(type);
   const handleLocation = (location: string) => {
     setCurrentLocation(location);
     localStorage.setItem('currentLocation', location);
-    navigate(`/${location}/${currentKeyword}`);
   };
 
   return (
