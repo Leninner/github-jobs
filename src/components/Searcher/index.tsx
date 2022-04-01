@@ -14,7 +14,7 @@ export const Searcher = ({ setCurrentKeyword, currentLocation }: any) => {
     setCurrentKeyword(search);
     setSearch('');
     localStorage.setItem('currentKeyword', search);
-    navigate(`/location/${currentLocation}`);
+    navigate(`/${currentLocation}/${search}`);
   };
 
   return (
