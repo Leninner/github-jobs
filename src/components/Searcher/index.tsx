@@ -13,7 +13,7 @@ export const Searcher = ({ setCurrentKeyword, currentLocation }: any) => {
     e.preventDefault();
     setCurrentKeyword(search);
     setSearch('');
-    sessionStorage.setItem('currentKeyword', search);
+    localStorage.setItem('currentKeyword', search);
     navigate(`/${currentLocation}/${search}`);
   };
 
