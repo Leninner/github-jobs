@@ -14,8 +14,7 @@ export const App = () => {
         <Routes>
           <Route path='/' element={<HomeScreen />} />
           {/* TODO: Implementar paginación */}
-          <Route path={`/location=${location}/q=${keyword}`} element={<HomeScreen />} />
-          {/*  //q?=developer&location=spain */}
+          <Route path={`/${location}/${keyword}`} element={<HomeScreen />} />
         </Routes>
       </Layout>
     </BrowserRouter>
