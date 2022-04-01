@@ -18,7 +18,7 @@ export const JobsFilter = ({
   const handleLocation = (location: string) => {
     setCurrentLocation(location);
     localStorage.setItem('currentLocation', location);
-    navigate(`/${location}/${currentKeyword}`);
+    navigate(`/location/${location}`);
   };
 
   return (

@@ -10,7 +10,7 @@ export const App = () => {
       <Layout>
         <Routes>
           <Route path='/' element={<HomeScreen />} />
-          <Route path={`/:location/:keyword`} element={<HomeScreen />} />
+          <Route path={`/location/:location`} element={<HomeScreen />} />
           <Route path='*' element={<HomeScreen />} />
         </Routes>
       </Layout>
