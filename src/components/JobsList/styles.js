@@ -17,8 +17,21 @@ export const JobInitialDataContainer = styled.div`
   justify-content: space-between;
   padding: 12px;
 
+  @media (max-width: 768px) {
+    width: 100%;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 147px;
+    justify-content: center;
+  }
+
   .JobMainInfo {
     max-width: 70%;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      width: 100%;
+    }
   }
 
   section {
@@ -32,6 +45,8 @@ export const JobInitialDataContainer = styled.div`
       height: 90px;
       border-radius: 4px;
       margin-right: 16px;
+      min-width: 90px;
+      min-height: 90px;
 
       img {
         width: 100%;
@@ -46,6 +61,8 @@ export const JobInitialDataContainer = styled.div`
       flex-direction: column;
       justify-content: space-between;
       color: #334680;
+      overflow: hidden;
+      word-wrap: break-word;
 
       span {
         font-weight: 700;
@@ -62,6 +79,11 @@ export const JobInitialDataContainer = styled.div`
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        @media (max-width: 768px) {
+          font-size: 16px;
+          line-height: 18px;
+        }
       }
 
       div {
