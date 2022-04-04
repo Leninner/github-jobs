@@ -36,6 +36,7 @@ export const Pagination = ({ setCurrentPage, totalCount, currentPage }: any) => 
         pageClassName={'pages'}
         activeClassName={'active'}
         breakClassName={'break-me'}
+        forcePage={currentPageNumber - 1}
       />
     </PaginationContainer>
   );
