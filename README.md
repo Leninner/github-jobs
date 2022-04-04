@@ -36,7 +36,7 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![image](https://user-images.githubusercontent.com/67031243/161645142-b311aec1-6f8f-4937-a4e0-03d42db4c995.png)
 
 This project is really simple. It's a web app that shows you the latest jobs from Jooble.com. You can use it to find the best job for you.
 
