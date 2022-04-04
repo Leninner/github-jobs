@@ -16,6 +16,7 @@ export const JobInitialDataContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 12px;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     width: 100%;

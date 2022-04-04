@@ -47,7 +47,7 @@ export const LocationInput = styled.input`
   border: none;
   outline: none;
   padding: 0 0 0 45px;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
