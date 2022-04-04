@@ -32,6 +32,7 @@ export const JobsList = ({ jobs, loading }: JobsListProps) => {
             <div className='JobData'>
               <span>{value.company}</span>
               <h3>{value.title}</h3>
+
               <div>
                 {value.type === 'Completa' ? (
                   <span>Full Time</span>

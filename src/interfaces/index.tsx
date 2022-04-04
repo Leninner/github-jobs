@@ -14,18 +14,11 @@ export interface Job {
   snippet: string;
   salary: string;
   source: string;
-  type: Type;
+  type: string;
   link: string;
   company: string;
   updated: Date;
   id: number;
-}
-
-export enum Type {
-  Completa = 'Completa',
-  Empty = '',
-  Temporal = 'Temporal',
-  TemporalCompleta = 'Temporal, Completa',
 }
 
 export interface Search {
