@@ -30,7 +30,7 @@ export const JobsList = ({
             ) : (
               <>
                 No founds jobs for <span>{currentKeyword}</span> in <span>{currentLocation}</span>. Try with another
-                <span>location</span> or another <span>keyword.</span>
+                <span> location</span> or another <span>keyword.</span>
               </>
             )}
           </h3>
