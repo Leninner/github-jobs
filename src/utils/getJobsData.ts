@@ -1,4 +1,10 @@
-export const getJobsData = async ({ location, keyword }: any) => {
+interface getPropsDataProps {
+  location: string;
+  keyword: string;
+  page: number;
+}
+
+export const getJobsData = async ({ location, keyword, page }: getPropsDataProps) => {
   const url = 'https://es.jooble.org/api/';
   const key = 'c437456c-e726-4a31-82a8-c93154a7feab';
 
@@ -10,7 +16,7 @@ export const getJobsData = async ({ location, keyword }: any) => {
     body: JSON.stringify({
       location: location,
       keywords: keyword,
-      page: 1,
+      page,
     }),
   })
     .then((res) => res.json())
