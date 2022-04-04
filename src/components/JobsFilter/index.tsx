@@ -9,13 +9,14 @@ export const JobsFilter = ({
   currentLocation,
   currentKeyword,
 }: any) => {
-  const typeVacancies = ['All', 'Full Time', 'Part Time', 'Sin especificar'];
+  const typeVacancies = ['All', 'Full Time', 'Part Time', 'Unspecified'];
   const customLocations = ['London', 'Amsterdam', 'Madrid', 'Paris', 'Roma'];
 
   const handleVacancies = (type: string) => setCurrentFilter(type);
   const handleLocation = (location: string) => {
     setCurrentLocation(location);
     localStorage.setItem('currentLocation', location);
+    setCurrentFilter('All');
   };
 
   return (

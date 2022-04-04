@@ -23,11 +23,11 @@ export const JobsContainer = ({ currentLocation, setCurrentLocation, currentKeyw
       case 'All':
         return jobs;
       case 'Full Time':
-        return jobs.filter((job: any) => job.type.includes('Completa') && !job.type.includes('Temporal'));
+        return jobs?.filter((job: any) => job.type.includes('Completa') && !job.type.includes('Temporal'));
       case 'Part Time':
-        return jobs.filter((job: any) => job.type.includes('Temporal'));
-      case 'Sin especificar':
-        return jobs.filter((job: any) => !job.type.length);
+        return jobs?.filter((job: any) => job.type.includes('Temporal'));
+      case 'Unspecified':
+        return jobs?.filter((job: any) => !job.type.length);
       default:
         break;
     }
@@ -42,7 +42,14 @@ export const JobsContainer = ({ currentLocation, setCurrentLocation, currentKeyw
         currentLocation={currentLocation}
         currentKeyword={currentKeyword}
       />
-      <JobsList jobs={filteredJobs()} loading={isLoading} currentFilter={currentFilter} />
+      <JobsList
+        jobs={filteredJobs()}
+        loading={isLoading}
+        currentKeyword={currentKeyword}
+        currentLocation={currentLocation}
+        currentFilter={currentFilter}
+        isJobsObtained={jobs?.length > 0}
+      />
     </StyledJobsContainer>
   );
 };

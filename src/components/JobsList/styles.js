@@ -125,3 +125,15 @@ export const JobInitialDataContainer = styled.div`
     }
   }
 `;
+
+export const NotFound = styled.div`
+  font-weight: 700;
+  line-height: 14px;
+  color: #334680;
+
+  span {
+    color: #334680;
+    font-weight: 700;
+    font-size: 22px;
+  }
+`;
