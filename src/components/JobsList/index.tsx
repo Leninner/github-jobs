@@ -82,7 +82,9 @@ export const JobsList = ({
         </>
       )}
 
-      <Pagination setCurrentPage={setCurrentPage} totalCount={totalCount} currentPage={currentPage} />
+      {totalCount > 20 && (
+        <Pagination setCurrentPage={setCurrentPage} totalCount={totalCount} currentPage={currentPage} />
+      )}
     </JobsListContainer>
   );
 };
