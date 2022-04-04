@@ -2,15 +2,7 @@ import { JobsListContainer, JobInitialDataContainer, NotFound } from './styles';
 import { SkeletonLoader } from '../SkeletonLoader';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
-
-interface JobsListProps {
-  loading: boolean;
-  jobs: any;
-  currentKeyword: string;
-  currentLocation: string;
-  currentFilter: string;
-  isJobsObtained: boolean;
-}
+import { JobsListProps } from '../../interfaces';
 
 export const JobsList = ({
   jobs,
@@ -33,11 +25,12 @@ export const JobsList = ({
           <h3>
             {isJobsObtained ? (
               <>
-                Not found results for <span>{currentFilter}</span>
+                Not found results for <span>{currentFilter}</span>. Try with another filter.
               </>
             ) : (
               <>
-                No founds jobs for <span>{currentKeyword}</span> in <span>{currentLocation}</span>
+                No founds jobs for <span>{currentKeyword}</span> in <span>{currentLocation}</span>. Try with another
+                <span>location</span> or another <span>keyword.</span>
               </>
             )}
           </h3>

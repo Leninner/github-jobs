@@ -25,3 +25,12 @@ export interface Search {
   location: string;
   keyword: string;
 }
+
+export interface JobsListProps {
+  loading: boolean;
+  jobs: any;
+  currentKeyword: string;
+  currentLocation: string;
+  currentFilter: string;
+  isJobsObtained: boolean;
+}
