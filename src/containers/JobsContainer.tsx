@@ -8,15 +8,18 @@ import { getJobsData } from '../utils/getJobsData';
 
 export const JobsContainer = ({ currentLocation, setCurrentLocation, currentKeyword }: any) => {
   const [currentFilter, setCurrentFilter] = useState('All');
+  const [currentPage, setCurrentPage] = useState(1);
+
   const { data, isLoading } = useQuery(
-    ['jobs', currentLocation, currentKeyword],
-    () => getJobsData({ location: currentLocation, keyword: currentKeyword }),
+    ['jobs', currentLocation, currentKeyword, currentPage],
+    () => getJobsData({ location: currentLocation, keyword: currentKeyword, page: currentPage }),
     {
       refetchOnWindowFocus: false,
     }
   );
 
   const jobs = data?.jobs;
+  const totalCount = data?.totalCount;
 
   const filteredJobs = () => {
     switch (currentFilter) {
@@ -41,6 +44,7 @@ export const JobsContainer = ({ currentLocation, setCurrentLocation, currentKeyw
         setCurrentLocation={setCurrentLocation}
         currentLocation={currentLocation}
         currentKeyword={currentKeyword}
+        setCurrentPage={setCurrentPage}
       />
       <JobsList
         jobs={filteredJobs()}
@@ -49,6 +53,9 @@ export const JobsContainer = ({ currentLocation, setCurrentLocation, currentKeyw
         currentLocation={currentLocation}
         currentFilter={currentFilter}
         isJobsObtained={jobs?.length > 0}
+        setCurrentPage={setCurrentPage}
+        totalCount={totalCount}
+        currentPage={currentPage}
       />
     </StyledJobsContainer>
   );

@@ -33,4 +33,7 @@ export interface JobsListProps {
   currentLocation: string;
   currentFilter: string;
   isJobsObtained: boolean;
+  setCurrentPage: any;
+  totalCount: number;
+  currentPage: number;
 }

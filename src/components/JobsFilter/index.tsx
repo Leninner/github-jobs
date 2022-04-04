@@ -8,6 +8,7 @@ export const JobsFilter = ({
   setCurrentLocation,
   currentLocation,
   currentKeyword,
+  setCurrentPage,
 }: any) => {
   const typeVacancies = ['All', 'Full Time', 'Part Time', 'Unspecified'];
   const customLocations = ['London', 'Amsterdam', 'Madrid', 'Paris', 'Roma'];
@@ -17,6 +18,7 @@ export const JobsFilter = ({
     setCurrentLocation(location);
     localStorage.setItem('currentLocation', location);
     setCurrentFilter('All');
+    setCurrentPage(0);
   };
 
   return (
