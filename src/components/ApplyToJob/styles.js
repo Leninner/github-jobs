@@ -14,6 +14,10 @@ export const ApplyToJobContainer = styled.section`
   color: #334680;
   ${commonStyles}
 
+  @media (max-width: 800px) {
+    margin-bottom: 36px;
+  }
+
   h3 {
     font-weight: 700;
     text-transform: uppercase;

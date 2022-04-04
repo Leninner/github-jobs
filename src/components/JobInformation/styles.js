@@ -10,6 +10,16 @@ export const Header = styled.header`
   align-items: center;
   margin-bottom: 10px;
 
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    div {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+  }
+
   h3 {
     margin-right: 17px;
     font-family: 'Roboto';
