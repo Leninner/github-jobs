@@ -8,7 +8,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://github-jobs-tech.vercel.app/">
       Demo
     </a>
     <span> | </span>
@@ -24,14 +24,14 @@
 
 <!-- TABLE OF CONTENTS -->
 
-## Table of Contents
+<h3>Table of Contents</h3>
 
 - [Overview](#overview)
   - [Built With](#built-with)
 - [Features](#features)
-- [How to use](#how-to-use)
-- [Contact](#contact)
+- [How To Use](#how-to-use)
 - [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
 <!-- OVERVIEW -->
 
