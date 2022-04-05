@@ -4,6 +4,7 @@ import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
 import { JobsListProps } from '../../interfaces';
 import { Pagination } from '../Pagination';
+import { motion } from 'framer-motion';
 
 export const JobsList = ({
   jobs,
@@ -42,7 +43,12 @@ export const JobsList = ({
         <>
           {jobs?.map((value: any) => (
             // <Link to={`/job/${value.id}`} key={value.id} style={{ textDecoration: 'none' }}>
-            <JobInitialDataContainer key={value.id} onClick={() => goToJob(value.id, value)}>
+            <JobInitialDataContainer
+              key={value.id}
+              onClick={() => goToJob(value.id, value)}
+              as={motion.div}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.97 }}>
               <section className='JobMainInfo'>
                 <div className='BoxImage'>
                   <img

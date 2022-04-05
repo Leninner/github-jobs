@@ -1,5 +1,6 @@
 import { LocationFilterContainer, LocationInput, Label } from './CommonStyles';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export const LocationsFilter = ({ customLocations, currentLocation, handleLocation }: any) => {
   const [search, setSearch] = useState('');
@@ -28,7 +29,12 @@ export const LocationsFilter = ({ customLocations, currentLocation, handleLocati
 
       <ul>
         {customLocations.map((customLocation: string) => (
-          <Label key={customLocation} onClick={() => handleLocation(customLocation)}>
+          <Label
+            as={motion.label}
+            key={customLocation}
+            onClick={() => handleLocation(customLocation)}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}>
             <div className={`${currentLocation === customLocation && 'active'}`} />
             <span>{customLocation}</span>
           </Label>

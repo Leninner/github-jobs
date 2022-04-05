@@ -1,6 +1,7 @@
 import imageBackGround from '../../assets/backgroundImg.png';
 import { SearcherContainer } from './styles';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export const Searcher = ({ setCurrentKeyword }: any) => {
   const [search, setSearch] = useState('');
@@ -15,7 +16,7 @@ export const Searcher = ({ setCurrentKeyword }: any) => {
   };
 
   return (
-    <SearcherContainer>
+    <SearcherContainer as={motion.div} initial={{ y: '-100%' }} animate={{ y: '0' }} transition={{ duration: 0.5 }}>
       <img src={imageBackGround} alt='background' />
       <form onSubmit={handleSubmit}>
         <span className='material-icons-outlined'>work_outline</span>
